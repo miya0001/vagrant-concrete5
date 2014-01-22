@@ -23,6 +23,16 @@ Vagrant.configure("2") do |config|
             :server_root_password   => "concrete5",
             :server_repl_password   => "concrete5"
         },
+        :php => {
+            :directives => {
+                :default_charset             => 'UTF-8',
+                'mbstring.language'          => 'neutral',
+                'mbstring.internal_encoding' => 'UTF-8',
+                'date.timezone'              => 'UTC'
+            },
+            :packages => %w{ php5-cgi php5 php5-dev php5-cli php-pear } # ubuntu
+            # :packages => %w{ php php-devel php-cli php-pear php-mbstring } #centos
+        },
         :concrete5 => {
             :site => 'Welcome to the Concrete5'
         }
