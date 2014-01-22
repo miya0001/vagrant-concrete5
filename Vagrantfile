@@ -34,7 +34,10 @@ Vagrant.configure("2") do |config|
             # :packages => %w{ php php-devel php-cli php-pear php-mbstring } #centos
         },
         :concrete5 => {
-            :site => 'Welcome to the Concrete5'
+            :git_repository => 'https://github.com/concrete5/concrete5.git',
+            :git_revision   => '5.6.2.1',
+            :cli_url        => 'https://raw2.github.com/concrete5/concrete5/master/cli/install-concrete5.php',
+            :site           => 'Welcome to the Concrete5'
         }
     }
   end
