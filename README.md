@@ -13,6 +13,8 @@
  * `git clone https://github.com/miya0001/vagrant-concrete5.git`
 5. Change into a new directory.
  * `cd vagrant-concrete5`
+6. Install cookbooks.
+ * `berks install -p cookbooks`
 7. Start a Vagrant environment.
  * `vagrant up`
 8. Visit http://127.0.0.1:8080/
