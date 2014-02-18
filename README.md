@@ -7,7 +7,7 @@
 2. Install Vagrant.
  * http://www.vagrantup.com/
 3. Install berkshelf
- * `gem install berkshelf`
+ * `bundle install` or `gem install berkshelf`
 4. Install the vagrant plugins.
  * `vagrant plugin install vagrant-omnibus`
 5. Clone the repository into a local directory.
