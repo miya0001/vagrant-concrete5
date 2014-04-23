@@ -6,8 +6,8 @@
  * https://www.virtualbox.org/
 2. Install Vagrant.
  * http://www.vagrantup.com/
-3. Install berkshelf
- * `bundle install` or `gem install berkshelf`
+3. Chef Development Kit
+ * http://www.getchef.com/downloads/chef-dk/mac/
 4. Install the vagrant plugins.
  * `vagrant plugin install vagrant-omnibus`
 5. Clone the repository into a local directory.
@@ -15,7 +15,7 @@
 6. Change into a new directory.
  * `cd vagrant-concrete5`
 7. Install cookbooks.
- * `berks install -p cookbooks`
+ * `berks vendor cookbooks`
 8. Start a Vagrant environment.
  * `vagrant up`
 9. Visit http://127.0.0.1:8080/
