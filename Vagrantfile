@@ -8,11 +8,17 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
+  config.vm.synced_folder "www/concrete5", "/var/www/concrete5", :create => true
+
   config.omnibus.chef_version = :latest
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "concrete5"
     chef.json = {
+        :apache => {
+            :user       => 'vagrant',
+            :group      => 'vagrant'
+        },
         :mysql => {
             :server_debian_password => "concrete5",
             :server_root_password   => "concrete5",
