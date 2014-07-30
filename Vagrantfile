@@ -10,6 +10,9 @@ VAGRANTFILE_API_VERSION = "2"
 VM_BOX              = "precise64" # Ubuntu 12.04
 # VM_BOX              = "chef/centos-6.5" # CentOS 6.5
 
+C5_HOSTNAME         = "concrete5.local" # e.g example.com
+C5_IP               = "192.168.33.35" # host ip address
+
 C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5.git" # english
 C5_GIT_REVISION     = "5.6.3.1" # english version
 
@@ -33,7 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = VM_BOX
 
-  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.hostname = C5_HOSTNAME
+  config.vm.network :private_network, ip: C5_IP
 
   config.vm.synced_folder "www/concrete5", "/var/www/concrete5", :create => true
 
