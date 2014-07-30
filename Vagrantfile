@@ -1,10 +1,37 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.configure("2") do |config|
+VAGRANTFILE_API_VERSION = "2"
 
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+#
+# Configuration
+#
+
+VM_BOX              = "precise64" # Ubuntu 12.04
+# VM_BOX              = "chef/centos-6.5" # CentOS 6.5
+
+C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5.git" # english
+C5_GIT_REVISION     = "5.6.3.1" # english version
+
+C5_TITLE            = "Welcome to the concrete5" # site title
+
+C5_ADMIN_EMAIL      = "admin@example.com" # concrete5 admin email
+C5_ADMIN_PASSWORD   = "concrete5" # concrete5 admin password
+
+C5_CLI_URL          = 'https://raw2.github.com/concrete5/concrete5/master/cli/install-concrete5.php'
+
+# End configuration
+
+
+if VM_BOX === "precise64"
+    PHP_PACKAGES = %w{ php5-cgi php5 php5-dev php5-cli php-pear }
+elsif VM_BOX === "chef/centos-6.5"
+    PHP_PACKAGES = %w{ php php-devel php-cli php-pear php-mbstring }
+end
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.box = VM_BOX
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
@@ -16,8 +43,8 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "concrete5"
     chef.json = {
         :apache => {
-            :user       => 'vagrant',
-            :group      => 'vagrant'
+            :user   => 'vagrant',
+            :group  => 'vagrant'
         },
         :mysql => {
             :server_debian_password => "concrete5",
@@ -31,18 +58,17 @@ Vagrant.configure("2") do |config|
                 'mbstring.internal_encoding' => 'UTF-8',
                 'date.timezone'              => 'UTC'
             },
-            :packages => %w{ php5-cgi php5 php5-dev php5-cli php-pear } # ubuntu
-            # :packages => %w{ php php-devel php-cli php-pear php-mbstring } #centos
+            :packages => PHP_PACKAGES
         },
         # See https://github.com/Launch-with-1-Click/concrete5
         :concrete5 => {
-            :git_repository => 'https://github.com/concrete5/concrete5.git',
-            :git_revision   => '5.6.3',
-            :cli_url        => 'https://raw2.github.com/concrete5/concrete5/master/cli/install-concrete5.php',
-            :site           => 'Welcome to the Concrete5',
+            :git_repository => C5_GIT_REPOSITORY,
+            :git_revision   => C5_GIT_REVISION,
+            :cli_url        => C5_CLI_URL,
+            :site           => C5_TITLE,
             :admin => {
-                :email      => 'admin@example.com',
-                :password   => 'concrete5'
+                :email      => C5_ADMIN_EMAIL,
+                :password   => C5_ADMIN_PASSWORD
             }
         }
     }
