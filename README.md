@@ -9,7 +9,7 @@
 3. Chef Development Kit
  * http://www.getchef.com/downloads/chef-dk/mac/
 4. Install the vagrant plugins.
- * `vagrant plugin install vagrant-omnibus`
+ * `vagrant plugin install vagrant-omnibus vagrant-hostsupdater`
 5. Clone the repository into a local directory.
  * `git clone https://github.com/miya0001/vagrant-concrete5.git`
 6. Change into a new directory.
@@ -18,7 +18,7 @@
  * `berks vendor cookbooks`
 8. Start a Vagrant environment.
  * `vagrant up`
-9. Visit http://127.0.0.1:8080/
+9. Visit http://concrete5.local
 
 ## Configuration
 
@@ -28,3 +28,4 @@ https://github.com/Launch-with-1-Click/concrete5
 ## Contributors
 
 * [@miya0001](https://github.com/miya0001/)
+* [@ixkaito](https://github.com/ixkaito)
