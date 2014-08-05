@@ -28,3 +28,5 @@ https://github.com/Launch-with-1-Click/concrete5
 ## Contributors
 
 * [@miya0001](https://github.com/miya0001/)
+* [@ixkaito](https://github.com/ixkaito)
+* [@katzueno](https://github.com/katzueno)
