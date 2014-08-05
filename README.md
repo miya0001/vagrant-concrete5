@@ -18,7 +18,9 @@
  * `berks vendor cookbooks`
 8. Start a Vagrant environment.
  * `vagrant up`
-9. Visit http://127.0.0.1:8080/
+9. You may be prompted to authorize (enter admin password) to change the HOSTS config file on your host computer.
+10. Visit http://concrete5.local/
+11. When you `vagrant halt` or `vagrant destroy`, you may be prompted to authorize to change the HOSTS config file.
 
 ## Configuration
 
@@ -28,3 +30,5 @@ https://github.com/Launch-with-1-Click/concrete5
 ## Contributors
 
 * [@miya0001](https://github.com/miya0001/)
+* [@ixkaito](https://github.com/ixkaito/)
+
