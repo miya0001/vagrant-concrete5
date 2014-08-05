@@ -18,7 +18,7 @@
  * `berks vendor cookbooks`
 8. Start a Vagrant environment.
  * `vagrant up`
-9. Visit http://127.0.0.1:8080/
+9. Visit http://192.168.33.35/
 
 ## Configuration
 
