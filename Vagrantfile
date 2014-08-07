@@ -43,6 +43,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "www/concrete5", "/var/www/concrete5", :create => true
 
+  if Vagrant.has_plugin?("vagrant-hostsupdater")
+    config.hostsupdater.remove_on_suspend = true
+  end
+
   config.omnibus.chef_version = :latest
 
   config.vm.provision :chef_solo do |chef|
