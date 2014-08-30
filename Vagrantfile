@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 # Configuration
 #
 
-VM_BOX              = "precise64" # Ubuntu 12.04
+VM_BOX              = "hashicorp/precise64" # Ubuntu 12.04
 # VM_BOX              = "chef/centos-6.5" # CentOS 6.5
 
 C5_HOSTNAME         = "concrete5.local" # e.g example.com
@@ -28,7 +28,7 @@ C5_CLI_URL          = 'https://raw2.github.com/concrete5/concrete5/master/cli/in
 # End configuration
 
 
-if VM_BOX === "precise64"
+if VM_BOX === "hashicorp/precise64"
     PHP_PACKAGES = %w{ php5-cgi php5 php5-dev php5-cli php-pear }
 elsif VM_BOX === "chef/centos-6.5"
     PHP_PACKAGES = %w{ php php-devel php-cli php-pear php-mbstring }
