@@ -23,7 +23,7 @@ C5_TITLE            = "Welcome to the concrete5" # site title
 C5_ADMIN_EMAIL      = "admin@example.com" # concrete5 admin email
 C5_ADMIN_PASSWORD   = "concrete5" # concrete5 admin password
 
-C5_CLI_URL          = 'https://raw2.github.com/concrete5/concrete5/master/cli/install-concrete5.php'
+C5_CLI_URL          = 'https://raw.githubusercontent.com/concrete5/concrete5/master/cli/install-concrete5.php'
 
 # End configuration
 
