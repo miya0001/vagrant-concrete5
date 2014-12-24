@@ -29,7 +29,7 @@ C5_DB_NAME          = "concrete5"
 C5_DB_PASS          = "concrete5"
 C5_DB_USER          = "concrete5"
 
-C5_STARTING_POINT   = "elemental_full" # elemental_blank or elemental_full.
+C5_STARTING_POINT   = "elemental_blank" # elemental_blank or elemental_full.
 # C5_STARTING_POINT   = "blank" # for 5.6
 
 # End configuration
