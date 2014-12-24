@@ -12,11 +12,13 @@ VM_BOX              = "hashicorp/precise64" # Ubuntu 12.04
 
 C5_HOSTNAME         = "concrete5.local" # e.g example.com
 C5_IP               = "192.168.33.35" # host ip address
+C5_LOCALE           = "ja_JP"
 
 C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5.git" # english
 C5_GIT_REVISION     = "5.6.3.2" # english version
 # C5_GIT_REPOSITORY   = "https://github.com/concrete5japan/concrete5.git" # japanese
 # C5_GIT_REVISION     = "5.6.3.2.ja" # japanese version
+
 
 C5_TITLE            = "Welcome to the concrete5" # site title
 
@@ -72,6 +74,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         },
         # See https://github.com/Launch-with-1-Click/concrete5
         :concrete5 => {
+<<<<<<< HEAD
+=======
+            :db => {
+              :name => C5_DB_NAME,
+              :pass => C5_DB_PASS,
+              :user => C5_DB_USER
+            },
+            :locale         => C5_LOCALE,
+            :starting_point => C5_STARTING_POINT,
+>>>>>>> ffb52a9... add locale
             :git_repository => C5_GIT_REPOSITORY,
             :git_revision   => C5_GIT_REVISION,
             :cli_url        => C5_CLI_URL,
