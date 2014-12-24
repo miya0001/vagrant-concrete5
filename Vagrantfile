@@ -14,10 +14,8 @@ C5_HOSTNAME         = "concrete5.local" # e.g example.com
 C5_IP               = "192.168.33.35" # host ip address
 C5_LOCALE           = "ja_JP"
 
-C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5.git" # english
-C5_GIT_REVISION     = "5.6.3.2" # english version
-# C5_GIT_REPOSITORY   = "https://github.com/concrete5japan/concrete5.git" # japanese
-# C5_GIT_REVISION     = "5.6.3.2.ja" # japanese version
+C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5-5.7.0.git" # english
+C5_GIT_REVISION     = "5.7.3" # english version
 
 
 C5_TITLE            = "Welcome to the concrete5" # site title
@@ -25,7 +23,11 @@ C5_TITLE            = "Welcome to the concrete5" # site title
 C5_ADMIN_EMAIL      = "admin@example.com" # concrete5 admin email
 C5_ADMIN_PASSWORD   = "concrete5" # concrete5 admin password
 
-C5_CLI_URL          = 'https://raw.githubusercontent.com/concrete5/concrete5/master/cli/install-concrete5.php'
+C5_DB_NAME          = "concrete5"
+C5_DB_PASS          = "concrete5"
+C5_DB_USER          = "concrete5"
+
+C5_STARTING_POINT   = "elemental_full" # elemental_blank or elemental_full.
 
 # End configuration
 
@@ -72,10 +74,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             },
             :packages => PHP_PACKAGES
         },
-        # See https://github.com/Launch-with-1-Click/concrete5
+        # See https://github.com/torounit/concrete5
         :concrete5 => {
-<<<<<<< HEAD
-=======
             :db => {
               :name => C5_DB_NAME,
               :pass => C5_DB_PASS,
@@ -83,10 +83,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             },
             :locale         => C5_LOCALE,
             :starting_point => C5_STARTING_POINT,
->>>>>>> ffb52a9... add locale
             :git_repository => C5_GIT_REPOSITORY,
             :git_revision   => C5_GIT_REVISION,
-            :cli_url        => C5_CLI_URL,
             :site           => C5_TITLE,
             :admin => {
                 :email      => C5_ADMIN_EMAIL,
