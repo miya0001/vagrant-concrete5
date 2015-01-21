@@ -12,7 +12,7 @@ VM_BOX              = "hashicorp/precise64" # Ubuntu 12.04
 
 C5_HOSTNAME         = "concrete5.local" # e.g example.com
 C5_IP               = "192.168.33.35" # host ip address
-C5_LOCALE           = "ja_JP"
+C5_LOCALE           = "en_US"
 
 C5_GIT_REPOSITORY   = "https://github.com/concrete5/concrete5-5.7.0.git"
 C5_GIT_REVISION     = "5.7.3"
@@ -77,7 +77,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             },
             :packages => PHP_PACKAGES
         },
-        # See https://github.com/torounit/concrete5
+        # See https://github.com/Launch-with-1-Click/concrete5
         :concrete5 => {
             :db => {
               :name => C5_DB_NAME,
