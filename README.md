@@ -7,7 +7,7 @@
 2. Install Vagrant.
  * http://www.vagrantup.com/
 3. Chef Development Kit
- * https://downloads.chef.io/chef-dk/mac/#/
+ * https://downloads.chef.io/chef-dk/mac/
 4. Install the vagrant plugins.
  * `vagrant plugin install vagrant-omnibus`
 5. Clone the repository into a local directory.
